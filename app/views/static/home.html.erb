@@ -1,0 +1,54 @@
+<section id='samplings' class='fullscreen'>
+  <ul>
+  <% @homepage.slides.each do |slide| %>
+    <li data-color='<%= slide.color %>'>
+      <%= image_tag slide.photo.url %>
+    </li>
+  <% end %>
+  </ul>
+  <div class='table-wrapper'>
+    <div class='table-cell'>
+      <h2 id='issue-label'>issue one</h2>
+    </div>
+  </div>
+</section>
+
+<div class='fullscreen'></div>
+
+<section id='introduction' class='fullscreen'>
+  <div class='table-wrapper'>
+    <div class='table-cell'>
+      <a class='inline-logo'>
+        <%= image_tag 'hum_logo.png' %>
+      </a>
+
+      <header class='w800 large-blurb' >
+        <p>Hum Journal archives the work of Boston visual artists and writers. Enjoy the publication in print or here at humboston.com.</p>
+      </header>
+
+      <div class='callouts two w1200'>
+        <a href='' class='work'>
+          <div class='overlay'>
+            <div class='table-wrapper'>
+              <div class='table-cell'>
+                <span>see issue 1</span>
+              </div>
+            </div>
+          </div>
+          <%= image_tag 'view_work.jpg' %>
+        </a>
+
+        <a href='' class='about'>
+          <div class='overlay'>
+            <div class='table-wrapper'>
+              <div class='table-cell'>
+                <span>more about hum</span>
+              </div>
+            </div>
+          </div>
+          <%= image_tag 'about_hum.jpg' %>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+#samplings {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  #issue-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 900;
+    @include transition(color 1000ms ease);
+  }
+
+  .table-cell {
+    text-align: center;
+  }
+}

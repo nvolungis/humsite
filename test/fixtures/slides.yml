@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sortorder: 1
+  color: MyString
+
+two:
+  sortorder: 1
+  color: MyString

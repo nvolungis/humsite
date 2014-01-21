@@ -1,0 +1,37 @@
+.callouts {
+  padding: 20px 0;
+  font-size: 0;
+
+  &.two {
+    a{
+      width: 49%;
+      margin-right: 2%;
+    }
+  }
+
+  &.three {
+    a{
+      width: 32%;
+      margin-right: 2%;
+    }
+  }
+
+  a {
+    width: 100%;
+    position: relative;
+    font-size: 16px;
+    @include inline-block;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    width: 100%;
+  }
+}
+

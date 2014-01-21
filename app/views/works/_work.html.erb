@@ -1,0 +1,25 @@
+<section class='work-item'>
+  <%= render 'arrows', :work => @work %>
+
+  <figure class='w1200'>
+    <div class='work-image'>
+      <%= lazy_image @work.photo.url %>
+    </div>
+  </figure>
+
+  <div class='meta'>
+    <span class='info-icon'>i</span>
+    <div class='info-right'>
+      <%= image_tag @artist.photo.url, :class => '' %>
+      <span class='more-artist-info'><%= @work.artist.name %></span>
+    </div>
+    <span class='info-left'><span> &mdash; </span><%= @work.title %></span> 
+  </div>
+
+  <footer class='artist-panel'>
+    <span class='close'>X</span>
+    <%= render :template => 'artists/show' %>
+  </footer>
+</section>
+
+
