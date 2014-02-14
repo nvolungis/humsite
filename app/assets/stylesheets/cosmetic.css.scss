@@ -3,10 +3,58 @@ html {
 }
 
 .large-blurb {
-  font-size: 26px;
+  font-size: 20px;
   line-height: 1.4em;
+
+  @media screen and (min-width: 500px){
+    font-size: 28px;
+  }
+
+  @media screen and (min-width: 700px) {
+    font-size: 39px;
+  }
+}
+
+.blurb {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.huge {
+	font-size: 100px;
 }
 
 .circular {
   border-radius:50%;
+}
+
+.playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.gray {
+	background: #303030;
+	color: white;
+}
+
+.white {
+	background: white;
+	color: #121111;
+}
+
+.peach {
+	color: #f2cdc8;
+}
+
+.green {
+	color: #c5b96d;
+}
+
+.periwinkle {
+	color: #d0cdf0;
+}
+
+em {
+	font-weight: bold;
+	font-family: 'Playfair Display', serif;
 }

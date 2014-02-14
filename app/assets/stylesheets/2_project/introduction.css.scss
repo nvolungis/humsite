@@ -1,58 +1,25 @@
 #introduction {
+  padding: 40px 20px;
   position: relative;
   z-index: 1;
   background: white;
   text-align: center;
 
-  .callouts {
-    .overlay {
-      font-family: 'Playfair Display', serif;
-    }
-
-    a {
-      color: black;  
-      font-size: 30px;
-    }
+  @media screen and (min-width:700px) {
+    padding: 80px 20px;
   }
-
+  
+  header {
+    margin-bottom: 60px;
+  }
 }
 
 .inline-logo {
-  @include inline-block;
-  max-width: 250px;
+  @include inline-block();
+  max-width: 140px;
 
   img {
     max-width: 100%;
-  }
-}
-
-.callouts {
-  .work {
-    .overlay {
-      background: rgba(243, 240, 223, .8);
-
-      &:hover {
-        background: rgba(255,255,255,0);
-      }
-    }
-  }
-
-  .about {
-    .overlay {
-      background: rgba(248, 232, 232, .8);
-
-      &:hover {
-        background: rgba(255,255,255,0);
-      }
-    }
-  }
-
-  img {
-    width: 100%;
-  }
-
-  .overlay {
-    @include transition(background 300ms ease);
   }
 }
 

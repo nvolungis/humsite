@@ -1,25 +1,27 @@
 <section class='work-item'>
-  <%= render 'arrows', :work => @work %>
+  <div class='padding'>
+    <%= render 'arrows', :work => @work %>
 
-  <figure class='w1200'>
-    <div class='work-image'>
+    <div class='work-image fullscreen'>
       <%= lazy_image @work.photo.url %>
     </div>
-  </figure>
-
-  <div class='meta'>
-    <span class='info-icon'>i</span>
-    <div class='info-right'>
-      <%= image_tag @artist.photo.url, :class => '' %>
-      <span class='more-artist-info'><%= @work.artist.name %></span>
-    </div>
-    <span class='info-left'><span> &mdash; </span><%= @work.title %></span> 
   </div>
 
-  <footer class='artist-panel'>
-    <span class='close'>X</span>
-    <%= render :template => 'artists/show' %>
+  <footer class='artist-panel' id='artist-panel'>
+    <div class='w1200'>
+      <div class='padding'>
+        <div class='artist-info'>
+          <%= image_tag(@artist.photo.url, class: 'circular') %>
+          <div class='artist-details'>
+            <h3><%= @work.title %></h3>
+            <span>by <a href='#' class='artist-expand'><%= @artist.name %></a></span>
+          </div>
+          <div class='artist-expanded'>
+            <%= render template: 'artists/show' %>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
+
 </section>
-
-

@@ -1,4 +1,12 @@
 (function($) {
+  $(document).on('page:before-change', function(){
+    // $('#samplings').slideshow('destroy');
+    // $('.fullscreen').fullscreen('destroy');
+    // $('.min-height').fullscreen('destroy');
+    // $('#site-header').togglebutton('destroy');
+    // $(window).stickyBackgroundSection('destroy');
+  });
+
   $(document).on('ready page:load', function(){
     $('#samplings').slideshow({
       container:$('#samplings ul'),
@@ -16,21 +24,32 @@
     $('#issue-label').fitText(.9);
 
     $('.fullscreen').fullscreen();
-
-    $('.work-image img').fullHeightImage();
-
-    $('.work-image').maxheight();
-
-    $('.artist-panel').artistpanel();
-
-    $('.work-item .meta').togglebutton({
-      button: '.info-icon'
+    $('.min-height').fullscreen({
+      attr: 'min-height'
     });
 
-    /*
-     *$('.artist-panel').togglebutton({
-     *  button: '.circular'
-     *});
-     */
+    $('.work-image img').fullHeightImage({
+			reference: '.work-image' 
+		});
+
+    $('#site-header').togglebutton({
+      button: '#menu',
+      click_close: '.close'
+    });
+
+    $('.artist-info').togglebutton({
+      button: '.artist-expand',
+      class_name: 'expanded',
+      on_open: function(){
+        var top = $('#artist-panel').offset().top;
+
+        $('html, body').animate({scrollTop: top}, 300);
+      }
+    });
+
+    $(window).stickyBackgroundSection({
+      images: '[data-role=sticky-image]',
+      spacers: '[data-role=sticky-spacer]'
+    });
   });
 }(jQuery))

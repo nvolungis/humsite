@@ -1,0 +1,82 @@
+<div class='gray first-section about-section ' data-role='sticky-spacer'>
+  <div class='table-wrapper'>
+    <div class='table-cell'>
+      <div class='section w1200'>
+        <div class='padding'>
+          <h1 class='playfair peach huge'>the idea</h1>
+          <div class='columns three gradual'>
+            <p><em>hum journal </em>is a publication designed to share and archive the creative work of visual artists and writers in the Greater Boston Area.  A small print publication that expands on its content and impact through an internet presence, we hope hum will further facilitate and expose a culture of beauty-production and  creative camaraderie in Boston. Hum seeks unconventional creative work; anything that is visually interesting, conceptual, or otherwise provocative.  You do not need to make "art" to submit, you just need to make "stuff."  Each issue will pose a theme that can be interpreted as abstractly or pointedly as the artist wishes.  hum journal is a publication designed to share and archive the creative work of journal is a publication designed to share and archive the creative work of visual artists and writers in the Greater Boston Area.  A small print publication that expands on its content and impact through an internet presence, we hope hum will further facilitate and expose a culture of beauty-production and creative camaraderie in Boston.	</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='image-section' id='journal' data-role='sticky-image'> </div>
+
+<div class='white about-section' data-role='sticky-spacer'>
+  <div class='table-wrapper'>
+    <div class='table-cell'>
+      <div class='section w1200' id='about-us'>
+        <div class='padding'>
+          <h1 class='playfair green huge'>about us</h1>	
+          <div class='columns three blocks'>
+            <p><em>two days apart</em> Holly and Anna were born apart in August. They met as rivals in a run for high school class historian. Then, some time later, they became friends. Now, they're amicably cohabitating in an apartment in Jamaica Plain.  </p>
+
+            <p><em>anna leocha</em> is most amused by the moving image and has found inspiration in 60s/70s avant-garde cinema and the everyday intimacy of home videos. She likes to write. Proximity to the Atlantic Ocean and Walden Pond respectively is the best thing about living in Boston.  </p>
+
+            <p><em>holly copeland</em> is a web producer and most interested in the anatomy of digital spaces and the creative design of interactive worlds. She's good with photoshop. Mi Pueblito restaurant in Eastie is the best thing about living in Boston. But shhh, don't tell anyone!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='image-section' id='us' data-role='sticky-image'></div>
+
+<div class='gray about-section ' data-role='sticky-spacer' >
+  <div class='table-wrapper'>
+    <div class='table-cell'>
+      <div class='section w1200'>
+        <div class='padding'>
+          <h1 class='playfair periwinkle huge'>contact</h1>
+          <div class='columns three blocks'>
+            <p><em>To get in touch </em> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae augue dignissim lacus convallis gravida. Ut sed tempus enim. Nulla mauris sapien, cursus nec elit vel.</p>
+            <p>Spien, cursus nec elit vel.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae augue dignissim lacus convallis gravida. Ut sed tempus enim. Nulla mauris sapien, cursus.</p>
+            <p>Sign up for our email list  to receive email updates about upcoming issues, submission deadlines and events!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='white about-section' data-role='sticky-section'>
+  <div class='table-wrapper'>
+    <div class='table-cell'>
+      <div class='section w1200'>
+        <div class='padding'>
+          <h1 class='playfair black huge'>special thanks</h1>
+          <ul class='thank-yous'>
+            <% @about.thank_yous.each do |thank_you| %>
+              <li class='thank-you'>
+                <%= image_tag(thank_you.photo.url) %>
+                <div class='overlay'>
+                  <div class='table-wrapper'>
+                    <div class='table-cell'>
+                      <span class='name'><%= thank_you.name %></span>
+                      <span class='separator'></span>
+                      <span class='role'><%= thank_you.role %></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.image-section {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	width: 100%;
+	height: 300px;
+
+	@media screen and (min-width: 700px) {
+		height: 450px;
+	}
+
+	@media screen and (min-width: 900px) {
+		height: 580px;
+	}
+}
+
+
+#journal {
+	background-image: image-url('field-kit.jpg');
+}
+
+#us {
+	background-image: image-url('us.jpg');
+}

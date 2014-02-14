@@ -1,0 +1,35 @@
+.work-item {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  @include box-sizing(border-box);
+
+  .work-image {
+    @include inline-block();
+    @include box-sizing(border-box);
+
+    img {
+      max-width: none;
+    }
+  }
+
+  figure {
+    vertical-align: middle;
+    max-width: 100%;
+    height: 100%;
+
+    figcaption{
+      text-align: left;
+    }
+  }
+
+  footer.artist-panel {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+  }
+
+  .table-cell {
+    text-align: center;
+  }
+}

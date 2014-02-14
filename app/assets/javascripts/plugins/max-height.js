@@ -13,7 +13,7 @@
 
       $window.on('resize.maxheight', function(){
         that.$el.css({
-          'max-height': $window.height() - 140,
+          'max-height': $window.height()
         });
       });
 

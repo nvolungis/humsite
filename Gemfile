@@ -14,6 +14,8 @@ gem 'unicorn'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+gem 'modernizr-rails'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

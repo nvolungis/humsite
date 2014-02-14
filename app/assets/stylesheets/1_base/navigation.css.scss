@@ -1,12 +1,7 @@
 .navigation {
 
   li {
-    display: block;
-
-    @media screen and (min-width: 600px){ 
-      @include inline-block;
-    }
-
+    @include inline-block;
     a {
       display: block;
     }

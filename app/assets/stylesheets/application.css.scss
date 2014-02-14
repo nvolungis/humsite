@@ -12,9 +12,9 @@
 
  @import 'bourbon';
  @import 'font-awesome';
- @import './0_foundation/_index';
- @import './1_base/_index';
- @import './2_project/_index';
-
- @import './cosmetic';
-
+ @import 'mixins';
+ @import '0_foundation/reset';
+ @import '1_base/**/*';
+ @import '2_project/**/*';
+ @import 'cosmetic';
+	

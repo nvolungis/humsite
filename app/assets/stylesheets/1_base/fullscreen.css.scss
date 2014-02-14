@@ -1,0 +1,3 @@
+.fullscreen, .min-height, .max-height {
+  @include box-sizing(border-box);
+}

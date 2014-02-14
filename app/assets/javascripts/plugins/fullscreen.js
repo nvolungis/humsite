@@ -1,10 +1,7 @@
 (function($){
-  $.fn.fullscreen = function(options){
-    var $window = $(window),
-        $els = $('.fullscreen'),
-        defaults = {};
-
-    var Fullscreen = function(options){
+  var $window = $(window);
+  
+  function Fullscreen($els, options){
       this._$els = $els;
       this.options = options;
       this.initialize();
@@ -28,57 +25,24 @@
 
         this._$els.each(function(i, el){
           var $el = $(el),
-              height = that.get_height($el),
-              min_height = that.get_min_height($el);
+              height = that.get_height($el);
 
-          that.test_height_relation(height, min_height, $el);
-          that.test_applicability($el, height, function(height){
-            $el.css({
-              height: height,
-              'min-height' : min_height + 'px'
-            });
-          });
+          $el.css(that.options.attr, height);
         });
-      },
-
-      test_applicability: function($el, height, cb){
-        var min_width = parseInt($el.data('width-cutoff')),
-            width = parseInt($window.width()),
-            height = (width < min_width) ? 'auto' : height + 'px';
-        
-        cb(height); 
       },
 
       get_height: function($el){
         var offset = $el.data('subtractor') ? $($el.data('subtractor')).height() : 0;
         return $window.height() - offset;
-      },
-
-      get_min_height: function($el) {
-        return $el.data('min-height') ? $($el.data('min-height')).height() + 40 : 0;
-      },
-
-      test_height_relation: (function(){
-        var state = '';
-
-        return function(height, min_height, $el){
-          if(height < min_height && state != 'below'){
-            $window.trigger('full:screen:changed', {state:'below', el:$el});
-            state = 'below';
-          }else if (height > min_height && state != 'above'){
-            $window.trigger('full:screen:changed', {state:'above', el:$el});
-            state = 'above';
-          }
-        }
-      }()),
-
-      set_status_class: function(e, data){
-        data.el.removeClass('above below').addClass(data.state);
       }
     });
 
-    options = $.extend({}, defaults, options);
-    new Fullscreen(options);
-  };
+    $.fn.fullscreen = function(options){
+      var defaults = { attr: 'height' },
+          options = $.extend({}, defaults, options),
+          $els = this;
+
+      new Fullscreen($els, $.extend({}, defaults, options));
+    };
 }(jQuery));
 

@@ -13,41 +13,55 @@
   </div>
 </section>
 
-<div class='fullscreen'></div>
+<div class='fullscreen' id='spacer'></div>
 
-<section id='introduction' class='fullscreen'>
+<section id='introduction' class='min-height'>
   <div class='table-wrapper'>
     <div class='table-cell'>
-      <a class='inline-logo'>
-        <%= image_tag 'hum_logo.png' %>
-      </a>
-
-      <header class='w800 large-blurb' >
-        <p>Hum Journal archives the work of Boston visual artists and writers. Enjoy the publication in print or here at humboston.com.</p>
+      <header class='w800 large-blurb playfair' >
+        <p>hum journal publishes and archives the work of visual artists and writers in boston. </p>
       </header>
 
-      <div class='callouts two w1200'>
-        <a href='' class='work'>
-          <div class='overlay'>
+      <div id='callout-wrapper' class='w1200'>
+        <div class='co co-left co-light'>
+          <div class='padding'>
             <div class='table-wrapper'>
               <div class='table-cell'>
-                <span>see issue 1</span>
+                <a class='inline-logo'>
+                  <%= image_tag 'hum_logo.png' %>
+                </a>
+                <h2 class='playfair'>See issue one</h2>
+                <p class='blurb'>explore the work of over 25 of Boston's most talented visual artists and writers</p>
+                <a href='/works'><i class="fa fa-long-arrow-right"></i></a>
               </div>
             </div>
           </div>
-          <%= image_tag 'view_work.jpg' %>
-        </a>
+        </div>
 
-        <a href='' class='about'>
-          <div class='overlay'>
-            <div class='table-wrapper'>
-              <div class='table-cell'>
-                <span>more about hum</span>
+        <div class='co co-top co-right co-light'>
+          <div class='co-background'></div>
+          <div class='table-wrapper'>
+            <div class='table-cell'>
+              <div class='padding'>
+                <h2 class='playfair'>dialogue</h2>
+                <p class='blurb'>Enter the weird world of hum artist Simon Hanes in the month’s dialogue.</p>
+                <a href='/dialogue'><i class="fa fa-long-arrow-right"></i></a>
+              </div>
+            </div>
+           </div>
+        </div>
+
+        <div class='co co-bottom co-right co-dark'>
+          <div class='table-wrapper'>
+            <div class='table-cell'>
+              <div class='padding'>
+                <h2 class='playfair'>about hum</h2>
+                <p class='blurb'>Hear the story behind hum journal and how to submit your work for issue two.</p>
+                <a href='/about'><i class="fa fa-long-arrow-right"></i></a>
               </div>
             </div>
           </div>
-          <%= image_tag 'about_hum.jpg' %>
-        </a>
+        </div>
       </div>
     </div>
   </div>

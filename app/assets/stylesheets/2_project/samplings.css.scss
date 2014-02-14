@@ -2,6 +2,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+
   #issue-label {
     font-family: 'Playfair Display', serif;
     font-size: 30px;
@@ -11,5 +12,17 @@
 
   .table-cell {
     text-align: center;
+  }
+}
+
+.touch {
+  #samplings {
+    position: static;
+    width: auto;
+    top: auto;
+  }
+
+  #spacer {
+    display: none;
   }
 }

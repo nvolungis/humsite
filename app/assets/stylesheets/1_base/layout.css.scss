@@ -1,5 +1,11 @@
 .inner {
-  @include layout-padding;
+  padding: 0px 20px;
+}
+
+.section {
+	.padding{
+	  padding: 20px;
+  }
 }
 
 .w1200 {

@@ -1,0 +1,39 @@
+.about-section {
+  position: relative;
+  z-index: 2;
+
+	.padding{
+    padding-bottom: 60px;
+	}
+
+	h1 {
+	  margin-top: .5em;
+	}
+
+	p {
+		line-height: 1.4em;
+	}
+
+	.columns {
+		&.three {
+			&.gradual{
+  		  @media screen and (min-width: 700px) {
+	  			 @include columns(2);
+		    }
+		 	  @media screen and (min-width: 900px) {
+			    @include columns(3);
+		  	}
+		  }
+
+		 	@media screen and (min-width: 900px) {
+			  @include columns(3);
+			}
+		}
+  }
+}
+
+.blocks {
+	p {
+		@include inline-block();
+  }
+}

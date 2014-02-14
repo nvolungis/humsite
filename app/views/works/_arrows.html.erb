@@ -1,7 +1,7 @@
 <% if work.prev %>
-  <span class='arrow prev'><%= link_to fa_icon('angle-left'), work_path(work.prev) %></span>
+  <span class='page-arrow prev'><%= link_to fa_icon('angle-left'), work_path(work.prev) %></span>
 <% end %>
 
 <% if work.next %>
-  <span class='arrow next'><%= link_to fa_icon('angle-right'), work_path(work.next) %></span>
+  <span class='page-arrow next'><%= link_to fa_icon('angle-right'), work_path(work.next) %></span>
 <% end %>

@@ -35,3 +35,42 @@
   }
 }
 
+
+
+@media screen and (min-width: 700px) {
+  .co-left {
+    float: left;
+    position: relative;
+  }
+
+  .co-right {
+    float: right;
+    position: relative;
+  }
+
+  .co-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .co-bottom {
+    position: absolute;
+    bottom: 0; 
+    width: 100%;
+  }
+}
+
+.co {
+  position: relative;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 700px) {
+    margin-bottom: 0;
+  }
+
+  .padding {
+    padding: 15px 10px;
+  }
+
+}
