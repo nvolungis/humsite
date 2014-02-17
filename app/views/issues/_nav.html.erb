@@ -1,0 +1,16 @@
+<div class='sticky-wrapper'>
+  <div class='sticky-inner w1200'>
+    <div id='artist-nav' class='sticky-nav'>
+      <div class='sticky-header'>
+        <span>The Artists</span>
+      </div>
+      <div class='sticky-body'>
+        <ul class='unstyled'>
+        <% @issue.artists.each do |artist| %>
+          <li style='border-color:<%= artist.color %>'><%= artist.name %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

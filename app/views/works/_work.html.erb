@@ -1,27 +1,6 @@
 <section class='work-item'>
-  <div class='padding'>
-    <%= render 'arrows', :work => @work %>
-
-    <div class='work-image fullscreen'>
-      <%= lazy_image @work.photo.url %>
-    </div>
+  <div class='work-image'>
+    <%= lazy_image work.photo.url %>
+    <h2 class='work-title playfair' style='border-color: <%= work.artist.color %>'><%= work.title %></h2>
   </div>
-
-  <footer class='artist-panel' id='artist-panel'>
-    <div class='w1200'>
-      <div class='padding'>
-        <div class='artist-info'>
-          <%= image_tag(@artist.photo.url, class: 'circular') %>
-          <div class='artist-details'>
-            <h3><%= @work.title %></h3>
-            <span>by <a href='#' class='artist-expand'><%= @artist.name %></a></span>
-          </div>
-          <div class='artist-expanded'>
-            <%= render template: 'artists/show' %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
 </section>

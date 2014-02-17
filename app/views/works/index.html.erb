@@ -1,1 +1,3 @@
-<%= render 'work' %>
+<%= @works.each do |work| %>
+  <%= render work %>
+<% end %>

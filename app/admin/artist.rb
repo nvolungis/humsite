@@ -1,7 +1,7 @@
 ActiveAdmin.register Artist do
   
   config.filters = false
-  permit_params :id, :name, :bio, :photo, :link, :neighborhood
+  permit_params :id, :name, :bio, :photo, :link, :neighborhood, :issue_id, :color
 
   index do
     column :max_width => "200px" do |artist|
@@ -9,6 +9,7 @@ ActiveAdmin.register Artist do
     end
     column :name
     column :neighborhood
+    column :issue
     actions
   end
 
@@ -20,6 +21,8 @@ ActiveAdmin.register Artist do
       f.input :neighborhood
       f.input :bio
       f.input :link
+      f.input :color
+      f.input :issue
       f.input :photo, :as => :file, :hint => f.template.image_tag(f.object.photo.url(:thumbnail))
     end
     f.actions

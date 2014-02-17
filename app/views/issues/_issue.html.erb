@@ -1,0 +1,6 @@
+<div class='issue'>
+  <%= render 'nav' %>
+  <% @issue.artists.each do |artist| %>
+    <%= render artist %>
+  <% end %>
+</div>

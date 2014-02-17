@@ -1,0 +1,34 @@
+.artist {
+  overflow: hidden;
+  margin-bottom: 100px;
+
+  .inner {
+    padding-right: 200px;  
+  }
+
+  .bio-inner {
+    border-left: 1px solid #eadd9b;
+    padding-left: 10px;
+    line-height: 1.8em;
+    min-height: 400px;
+  }
+
+  .artist-footer {
+    text-align: center;
+    font-style: italic;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+    font-weight: 900;
+  }
+
+  .artist-photo {
+    float:left;
+    width: 400px;
+  }
+
+  .artist-bio{
+    margin-left: 450px;
+  }
+}

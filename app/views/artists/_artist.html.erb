@@ -1,0 +1,18 @@
+<div class='artist w1200' id='<%= artist.name %>'>
+  <div class='inner'>
+    <h1 class='huge green playfair' style="color:<%= artist.color %>"><%= artist.name %></h1>
+    <%= image_tag(artist.photo.url, class: 'artist-photo circular') %>
+    <div class='artist-bio'>
+      <div class='bio-inner' style="border-color:<%= artist.color %>">
+        <p><%= artist.bio %></p>
+        <footer class='artist-footer'>
+          <%= link_with_target_text artist.link %>
+        </footer>
+      </div>
+    </div>
+
+    <% artist.works.each do |work| %>
+      <%= render work %>
+    <% end %>
+  </div>
+</div>
