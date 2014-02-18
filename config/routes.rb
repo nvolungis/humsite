@@ -4,5 +4,6 @@ Humsite::Application.routes.draw do
 
   root 'static#home'
 	get 'about', to: 'static#about'
-  resources :works, :only => [:index, :show]
+  resources :works, :only => [:index]
+  resources :issues, :only => [:show]
 end
