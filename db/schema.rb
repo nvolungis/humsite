@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140217213021) do
+ActiveRecord::Schema.define(version: 20140321205328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 20140217213021) do
     t.datetime "photo_updated_at"
     t.integer  "issue_id"
     t.string   "color"
+    t.integer  "sortorder"
+    t.integer  "weight"
   end
 
   create_table "friendly_id_slugs", force: true do |t|

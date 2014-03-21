@@ -3,6 +3,8 @@ class Artist < ActiveRecord::Base
   belongs_to :issue
   has_many :works
 
+  default_scope { order('weight ASC') }
+
   def parameterized_name
     name.parameterize
   end

@@ -7,6 +7,7 @@ ActiveAdmin.register Artist do
     column :max_width => "200px" do |artist|
       image_tag artist.photo.url
     end
+    column :weight
     column :name
     column :neighborhood
     column :issue
@@ -18,6 +19,7 @@ ActiveAdmin.register Artist do
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs "Details" do
       f.input :name
+      f.input :weight
       f.input :neighborhood
       f.input :bio
       f.input :link
