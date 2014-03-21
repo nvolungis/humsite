@@ -1,16 +1,18 @@
 .artist {
   overflow: hidden;
   margin-bottom: 100px;
+  position: relative;
+  z-index: 1;
 
-  .inner {
-    padding-right: 200px;  
+  .padding {
+    padding-right: 315px;  
   }
 
   .bio-inner {
     border-left: 1px solid #eadd9b;
     padding-left: 10px;
     line-height: 1.8em;
-    min-height: 400px;
+    min-height: 300px;
   }
 
   .artist-footer {
@@ -25,10 +27,10 @@
 
   .artist-photo {
     float:left;
-    width: 400px;
+    width: 300px;
   }
 
   .artist-bio{
-    margin-left: 450px;
+    margin-left: 350px;
   }
 }

@@ -1,0 +1,12 @@
+.modal {
+  background: rgba(255,255,255,0);
+  @include transition(background 200ms ease);
+
+  .transitioning {
+    @include transition(left 500ms ease, top 500ms ease, width 500ms ease, height 500ms ease);
+  }
+
+  &.active {
+    background: rgba(255,255,255,1);
+  }
+}

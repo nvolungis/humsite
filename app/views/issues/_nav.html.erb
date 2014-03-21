@@ -1,15 +1,22 @@
 <div class='sticky-wrapper'>
-  <div class='sticky-inner w1200'>
-    <div id='artist-nav' class='sticky-nav'>
-      <div class='sticky-header'>
-        <span>The Artists</span>
-      </div>
-      <div class='sticky-body'>
-        <ul class='unstyled'>
-        <% @issue.artists.each do |artist| %>
-          <li style='border-color:<%= artist.color %>'><%= artist.name %></li>
-        <% end %>
-        </ul>
+  <div class='sticky-inner w1100'>
+    <div class='sticky-padding'>
+      <div id='artist-nav' class='sticky-nav'>
+        <div class='sticky-header'>
+          <span class='playfair'>The Artists</span>
+        </div>
+
+        <div class='sticky-body'>
+          <ul class='unstyled'>
+          <% @issue.artists.each do |artist| %>
+            <li data-section='<%= artist.parameterized_name %>' >
+              <span class='sticky-active-indicator'></span>
+              <span class='sticky-item-name'><%= artist.name %></span>
+              <span class='sticky-item-progress-indicator' style='background:<%= artist.color %>'></span>
+            </li>
+          <% end %>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

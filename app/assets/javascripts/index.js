@@ -47,6 +47,12 @@
       }
     });
 
+    $('.lazy-image img').imgViewer({
+      js_animate: false
+    });
+
+    $(window).sectionscroll();
+
     $(window).stickyBackgroundSection({
       images: '[data-role=sticky-image]',
       spacers: '[data-role=sticky-spacer]'
