@@ -1,7 +1,7 @@
 ActiveAdmin.register Artist do
   
   config.filters = false
-  permit_params :id, :name, :bio, :photo, :link, :neighborhood, :issue_id, :color
+  permit_params :id, :name, :bio, :photo, :link, :neighborhood, :issue_id, :color, :weight
 
   index do
     column :max_width => "200px" do |artist|
