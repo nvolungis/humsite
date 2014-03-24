@@ -19,6 +19,10 @@
       win.on('resize.screentest', this.set_bounds.bind(this));
       win.on('scroll.screentest resize.screentest', this.test.bind(this));    
     },
+
+    unbind: function(){
+      win.off('resize.screentest scroll.screentest');        
+    },
     
     test: function(){
       var viewport = this.get_viewport(),
@@ -27,6 +31,7 @@
       if(in_view && !this.in_view_on_last_test){
         this.options.enter(this.$el);
         this.in_view_on_last_test = true; 
+        // if(this.options.unbind_on_enter) this.unbind();
       }else if( !in_view && this.in_view_on_last_test) {
         this.options.leave(this.$el);
         this.in_view_on_last_test = false;
@@ -54,7 +59,8 @@
   $.fn.screentest = function(options){
     var defaults = {
       enter: function(){},
-      leave: function(){}
+      leave: function(){},
+      unbind_on_enter: false
     };
 
     this.each(function(){

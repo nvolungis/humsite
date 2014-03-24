@@ -1,6 +1,6 @@
 <section class='work-item'>
   <div class='work-image'>
-    <%= lazy_image work.photo.url %>
+    <%= lazy_image work.display_url, work.aspect_ratio %>
     <h2 class='work-title playfair' style='border-color: <%= work.artist.color %>'><%= work.title %></h2>
   </div>
 </section>

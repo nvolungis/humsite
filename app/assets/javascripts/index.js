@@ -28,9 +28,11 @@
       attr: 'min-height'
     });
 
-    // $('.work-image img').fullHeightImage({
-		// 	reference: '.work-image' 
-		// });
+    $('.lazy-image').lazyimage({
+      on_insert: function($el) {
+        $el.find('img').imgViewer();
+      }
+    });
 
     $('#site-header').togglebutton({
       button: '#menu',

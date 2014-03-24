@@ -1,6 +1,6 @@
 module ApplicationHelper
-  def lazy_image url, options = {}
-    raw "<div class='lazy-image'>#{image_tag url, options}</div>"
+  def lazy_image url, aspect_ratio = 1
+    raw "<div class='lazy-image' data-aspect-ratio='#{aspect_ratio}' data-url='#{url}'></div>"
   end
 
   def open_display_table
