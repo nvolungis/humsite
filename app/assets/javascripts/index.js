@@ -28,9 +28,24 @@
       attr: 'min-height'
     });
 
+
+    $('#artist-nav li').scrollto({
+      attr: 'data-section'
+    });
+
     $('.lazy-image').lazyimage({
       on_insert: function($el) {
-        $el.find('img').imgViewer();
+        $el.find('img').imgViewer({
+          on_open: function(){
+            $('#header').fadeOut(200);
+          },
+
+          on_close: function(){
+            setTimeout(function(){
+              $('#header').fadeIn(200); 
+            }, 600);
+          }
+        });
       }
     });
 

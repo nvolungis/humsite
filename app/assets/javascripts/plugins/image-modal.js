@@ -92,6 +92,7 @@
       var current  = this.capture_attrs(),
           target = this.get_target_attrs();
 
+      this.options.on_open();
       this.modal.open(current, target);
       this.$el.addClass('expanded');
 
@@ -99,6 +100,7 @@
     },
 
     close_modal: function(){
+      this.options.on_close();
       this.modal.close(this.capture_attrs());
       $window.off('resize.imagemodal');
     }, 
@@ -129,8 +131,8 @@
 
   $.extend(Modal.prototype, jQuery.eventEmitter, {
     open: function(current, target){
-      this.modal = $('<div />').addClass('modal');
-      this.img = $('<img />').attr('src', current.src);
+      this.modal = $('<div />').addClass(this.options.modal_class);
+      this.img = $('<img />').attr('src', current.src).addClass('warp-in');
       this.position_image(current);
       if(this.options.style_modal) this.style_modal()
       this.modal.append(this.img);
@@ -149,6 +151,7 @@
     },
     
     close: function(target){
+      this.img.addClass('warp-out');
       this.modal.off('click');             
       this.modal.removeClass('active');
       this.position_image(target, true);
@@ -173,12 +176,15 @@
 
     position_image: function(attrs, animate){
      var target = {
-        'position': 'absolute',
         'z-index':100,
         'top':attrs.top,
         'left':attrs.left,
         'width':attrs.width,
       };
+
+      this.img.css({
+        position: 'absolute'
+      });
 
       if (animate && this.options.js_animate) {
         this.img.animate(target, this.options.transition_duration);
@@ -200,10 +206,12 @@
   $.fn.imgViewer = function(options){
     var defaults = {
       style_modal: true,
-      modal_class: 'modal',
+      modal_class: 'modal warp-parent',
       display_padding: 40,
       transition_duration: 500,
-      js_animate: true
+      js_animate: true,
+      on_open: function(){},
+      on_close: function(){}
     };
 
 

@@ -20,7 +20,7 @@ gem 'modernizr-rails'
 gem 'sass-rails', '~> 4.0.0'
 
 # Use bourbon for browser prefix stuff
-gem 'bourbon', github: 'thoughtbot/bourbon', branch: 'new-flex-box'
+gem 'bourbon'
 
 # Use paperclip to handle file attachments
 gem 'paperclip'

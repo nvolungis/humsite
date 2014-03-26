@@ -10,7 +10,7 @@
 }
 
 .sticky-padding {
-  padding: 0 20px;
+  padding: 20px 20px 0;
 }
 
 .sticky-item-progress-indicator {
@@ -32,7 +32,8 @@
 .sticky-nav {
   width: 270px;;
   float: right;
-.sticky-header { padding: 25px 15px;
+
+  .sticky-header { padding: 25px 15px;
     background: #e8edea;
     text-align: center;
     font-size: 41px;
@@ -48,13 +49,19 @@
     li {
       line-height: 1.3em;
       position: relative;
-      padding: 10px 0;
+      padding: 8px 0;
       border-color: #727272;
       border-style: solid;
       border-width: 0 0 2px;
+      cursor: pointer;
+      @include transition(padding 200ms ease);
 
       &:first-child {
         border-width: 2px 0;
+      }
+
+      &.active {
+        padding: 20px 0;
       }
 
       .sticky-active-indicator {
@@ -72,11 +79,12 @@
 
       &.active {
         .sticky-item-name {
-          padding: 10px 20px;
+          // padding: 10px 20px;
+          font-weight: bold;
         }
 
         .sticky-active-indicator {
-          border-width: 0px 0 0 10px;
+          // border-width: 0px 0 0 10px;
         }
       }
     }

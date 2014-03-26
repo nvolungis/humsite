@@ -1,4 +1,5 @@
 .modal {
+  cursor: url(image_path('cursor-zoom-minus-negative.png')) 10 10, pointer;
   background: rgba(255,255,255,0);
   @include transition(background 200ms ease);
 

@@ -6,6 +6,7 @@
 
     img {
       width: 100%;
+      cursor: url(image_path('cursor-zoom-plus-negative.png')) 10 10, pointer;
     }
   }
 }
@@ -15,4 +16,55 @@
   border-top: 6px solid #C5B96D;
   font-size: 25px;
   line-height: 1.4em;
+}
+
+.warp-parent {
+  @include perspective(500px);
+  @include perspective-origin(center top);
+}
+
+.warp-in {
+  @include transform-origin(left bottom);
+  @include animation(warp-in .55s ease-in);
+}
+
+.warp-out {
+  @include transform-origin(left bottom);
+  @include animation(warp-out .55s ease-in);
+}
+
+@include keyframes (warp-in) {
+  0% {
+    @include transform(scaleX(1) rotateX(0deg) rotateY(0deg));
+  }
+
+  40% {
+    @include transform(scaleX(1) rotateX(-3deg) rotateY(0deg));
+  }
+
+  70% {
+    @include transform(scaleX(1) rotateX(-1deg) rotateY(0deg));
+  }
+
+  100% {
+    @include transform(scaleX(1) rotateX(0deg) rotateY(0deg));
+  }
+}
+
+@include keyframes (warp-out) {
+  0% {
+    @include transform(scaleX(1) rotateX(0deg) rotateY(0deg));
+  }
+
+  30% {
+    @include transform(scaleX(1) rotateX(-3deg) rotateY(0deg));
+  }
+
+  70% {
+    @include transform(scaleX(1) rotateX(-1deg) rotateY(0deg));
+  }
+
+  100% {
+    @include transform(scaleX(1) rotateX(0deg) rotateY(0deg));
+  }
 }
