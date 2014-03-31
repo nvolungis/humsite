@@ -5,7 +5,8 @@
     click_close: null, 
     class_name:'active',
     on_open: function(){},
-    on_close: function(){}
+    on_close: function(){},
+    close_on_body_click: true
   };
 
   function Toggle(el, options) {
@@ -29,6 +30,7 @@
 
     toggle: function (e) {
       e.preventDefault();
+      e.stopPropagation();
       var showing = this.$el.hasClass(this.options.class_name);
 
       if (showing) {
@@ -40,7 +42,7 @@
 
     open: function(){
       this.$el.addClass(this.options.class_name);
-      console.log(this);
+      if(this.options.close_on_body_click) this.bind_body_close();
       this.on_open()
     },
 
@@ -50,8 +52,23 @@
         this.$el.attr({ 'class': '' });
       }
 
+      if( this.options.close_on_body_click ) this.unbind_body_close();
+
       this.$el.removeClass(this.options.class_name);
       this.on_close();
+    },
+
+
+    bind_body_close: function(){
+      var that = this;
+
+      $('body').on('click.toggelbutton', function(){
+        that.close(); 
+      });        
+    },
+
+    unbind_body_close: function(){
+      $('body').off('click.togglebutton');
     },
 
     destroy: function(){
